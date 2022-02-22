@@ -9,16 +9,13 @@
 function debounce(fn,delay,...arg){
     let timer=null
     return function(){
+        const _this=this
         if(timer){
             clearTimeout(timer)
         }
-        timer=setTimeout(fn,delay,...arg)
-    }
-}
-
-class Test{
-    constructor(){
-        this.age=12
+        timer=setTimeout((...arg)=>{
+            fn.call(_this,...arg)
+        },delay,...arg)
     }
 }
 
@@ -26,11 +23,6 @@ let res=debounce(sayName,1000,'dog')
 res()
 res() //dog
 
-let test=new Test()
-test.sayAge=sayName
-test.sayAge('haha')
-
 function sayName(name){
     console.log(name)
-    console.log(this.age)
 }
