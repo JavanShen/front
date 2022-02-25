@@ -1,5 +1,5 @@
 //防抖
-/**
+/** 
  * 无论触发多少次,如果触发间隔小于delay只会触发一次
  * @param {function} fn 要执行的函数
  * @param {number} delay 延迟时间(毫秒)
