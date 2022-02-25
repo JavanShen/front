@@ -1,3 +1,4 @@
+//原型链继承
 function Parent(){
     this.name='dog'
     this.food=['apple','peach','rice']
