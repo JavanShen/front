@@ -1,3 +1,4 @@
+//原型链
 function Animal(){
     this.name='dog'
 }
